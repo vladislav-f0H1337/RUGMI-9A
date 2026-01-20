@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redmi 9A | Official Scam Store</title>
+    <style>
+        :root {
+            --neon-purple: #bc13fe;
+            --neon-green: #39ff14;
+            --dark-bg: #050505;
+            --text-color: #e0e0e0;
+        }
+
+        body {
+            background-color: var(--dark-bg);
+            color: var(--text-color);
+            font-family: 'Courier New', Courier, monospace; /* Шрифт как в терминале */
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* --- Основной блок товара --- */
+        .main-content {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 800px;
+            border-bottom: 2px dashed var(--neon-purple);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 0 0 10px var(--neon-purple), 0 0 20px var(--neon-purple);
+            text-transform: uppercase;
+        }
+
+        .product-img {
+            width: 100%;
+            max-width: 300px;
+            border: 3px solid var(--neon-purple);
+            border-radius: 20px;
+            box-shadow: 0 0 20px var(--neon-purple);
+            margin: 20px 0;
+            transition: transform 0.2s;
+        }
+
+        .product-img:hover {
+            transform: scale(1.05) rotate(2deg);
+        }
+
+        .specs-list {
+            text-align: left;
+            background: rgba(20, 20, 20, 0.9);
+            padding: 20px;
+            border: 1px solid var(--neon-purple);
+            border-radius: 10px;
+            margin: 20px 0;
+            list-style: none;
+        }
+
+        .specs-list li {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+
+        .highlight {
+            color: var(--neon-purple);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .price-tag {
+            font-size: 3rem;
+            color: var(--neon-green);
+            font-weight: bold;
+            text-shadow: 0 0 10px var(--neon-green);
+            margin: 30px 0;
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0.5; }
+        }
+
+        .buy-btn {
+            display: block;
+            width: 100%;
+            padding: 25px;
+            font-size: 2rem;
+            background: var(--neon-purple);
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 0 30px var(--neon-purple);
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        .buy-btn:hover {
+            background: #d64fff;
+            transform: scale(1.02);
+        }
+
+        /* --- Тот самый подвал --- */
+        footer {
+            width: 100%;
+            background: #000;
+            padding: 40px 20px;
+            font-size: 0.8rem;
+            color: #888;
+            text-align: center;
+            border-top: 5px solid red;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: var(--neon-purple);
+            border-bottom: 1px solid #444;
+            padding-bottom: 5px;
+            margin-top: 20px;
+        }
+
+        .footer-section p, .footer-section li {
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+
+        .legal-entity {
+            border: 1px solid #333;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #0a0a0a;
+        }
+
+        .legal-entity strong {
+            color: #fff;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .disclaimer {
+            margin-top: 50px;
+            padding: 20px;
+            border: 1px solid red;
+            color: red;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            font-size: 1rem;
+            color: #fff;
+        }
+
+        a { color: var(--neon-purple); }
+    </style>
+</head>
+<body>
+
+    <div class="main-content">
+        <h1>Xiaomi Redmi 9A <br><span style="font-size: 0.6em; color: gray;">(Flagship Killer 3000)</span></h1>
+        
+        <img src="https://items.s1.citilink.ru/1402856_v01_b.jpg" alt="Мощный телефон" class="product-img">
+
+        <ul class="specs-list">
+            <li>💎 <strong>Процессор:</strong> <span class="highlight">Intel Core i9-14900K</span> (Охлаждение жидким азотом)</li>
+            <li>🚀 <strong>Видеокарта:</strong> <span class="highlight">NVIDIA RTX 5090 Ti</span> (Тянет Cyberpunk в 800 FPS)</li>
+            <li>🧠 <strong>ОЗУ:</strong> <span class="highlight">2 TB DDR5</span> (Больше чем у серверов Google)</li>
+            <li>🔋 <strong>Батарея:</strong> <span class="highlight">Ядерный реактор v2.0</span> (Зарядка раз в 100 лет)</li>
+            <li>💸 <strong>Функция:</strong> Генерация денег из воздуха (Bitcoin miner pro)</li>
+            <li>📷 <strong>Камера:</strong> 5000 Мп (Видно атомы и микробов)</li>
+        </ul>
+
+        <div class="price-tag">9.990.000 ₽</div>
+        
+        <p style="color: gray; text-decoration: line-through;">Старая цена: Почка + Квартира</p>
+
+        <a href="https://t.me/Logovo_bomja_fugu" class="buy-btn">👉 КУПИТЬ И ОФИГЕТЬ 👈</a>
+    </div>
+
+    <footer>
+        <div class="footer-grid">
+            
+            <div class="footer-section">
+                <h3>📞 Контактная информация</h3>
+                <p>🇺🇦 Украина: +380 (99) 424-42-42</p>
+                <p>🇷🇺 Россия: +7 (999) 424-42-42</p>
+                <p>🇧🇾 Беларусь: +375 (29) 042-42-42</p>
+                <p>📞 Доп: +380 (93) 000-00-00</p>
+                <p>📱 Viber/WA/TG: +7 (955) 070-42-42</p>
+                
+                <h3>📧 Email</h3>
+                <p>support@site.com</p>
+                <p>admin@site.com</p>
+                <p>noreply@site.com</p>
+                <p>ceo@site.com</p>
+                <p>mrfygypc10@gmail.com</p>
+
+                <h3>💬 Мессенджеры</h3>
+                <p>Telegram: <a href="https://t.me/Logovo_bomja_fugu">@Logovo_bomja_fugu</a></p>
+                <p>VK: vk.com/id0</p>
+                <p>Discord: discord.gg/ne_zaxodi</p>
+                <p>ICQ: 123456789</p>
+                <p>Skype: live:company_support</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>📍 Адреса офисов</h3>
+                <p>🇺🇦 Киев, ул. Независимости, д. 1</p>
+                <p>🇷🇺 Москва, ул. Ленина, д. 1, офис 404</p>
+                <p>🇧🇾 Минск, пр-т Победителей, д. 1337</p>
+                <p>🇰🇿 Астана, ул. Бизнесовая, д. НЕТУ</p>
+                <p>🌍 Удалённо: Интернет, сервер №3</p>
+                <p>❓ <strong>Где сервер:</strong> в пизде</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>⚖️ Юридическая информация</h3>
+                
+                <div class="legal-entity">
+                    <strong>ФОП Фугу Перкусрак Кунглефишь</strong>
+                    ИНН: А хуй его знает
+                </div>
+
+                <div class="legal-entity">
+                    <strong>ФОП Александр Григорьевич Лукашенко</strong>
+                    ИНН: 0987654021
+                </div>
+
+                <div class="legal-entity">
+                    <strong>ИП Владислав Владимирович СурХуйЯн</strong>
+                    ИНН: 1122334455 <br> ОГРНИП: 667788990011223
+                </div>
+
+                <div class="legal-entity">
+                    <strong>ИП Сунь Хуй Чай</strong>
+                    ИНН: 11251983455 <br> ОГРНИП: 667788990010023
+                </div>
+
+                <div class="legal-entity">
+                    <strong>ИП (ВЫГОРАНИЕ +рест) Enfiler</strong>
+                    ИНН: 1456816 <br> ОГРНИП: 667788990010023
+                </div>
+
+                <div class="legal-entity">
+                    <strong>ООО «Большие Члены Ой Блять Челны»</strong>
+                    ИНН: 1231531231 <br> КПП: 321321321 <br> ОГРН: 1027700132195
+                </div>
+
+                <div class="legal-entity">
+                    <strong>ООО «Отмыв денег»</strong>
+                    ИНН: 196396492583 <br> ОГРН: 0000005500000
+                </div>
+                
+                <div class="legal-entity">
+                    <strong>ЧП «Негры»</strong>
+                    СПД: 552973555
+                </div>
+
+                <div class="legal-entity">
+                    <strong>Самозанятый</strong>
+                    Налог на профессиональный доход<br>
+                    Регистрация: где-то там
+                </div>
+            </div>
+
+            <div class="footer-section">
+                <h3>🏦 Банковские реквизиты</h3>
+                <p>Р/С: 40802810900000000001</p>
+                <p>Банк: Самый Надёжный Банк</p>
+                <p>БИК: 044525225</p>
+                <p>К/С: 30101810400000000225</p>
+
+                <h3>📄 Документы</h3>
+                <ul>
+                    <li>Политика конфиденциальности</li>
+                    <li>Пользовательское соглашение</li>
+                    <li>Согласие на обработку персональных данных</li>
+                    <li>Отказ от ответственности</li>
+                    <li>Согласие на cookies</li>
+                    <li>Отказ от cookies</li>
+                    <li>Согласие на отказ от cookies</li>
+                    <li>Согласие на согласие</li>
+                </ul>
+
+                <h3>🗺 Навигация</h3>
+                <p>Главная | О нас | Услуги | Цены | Отзывы | FAQ | Контакты | Вакансии | Партнёрам | Инвесторам | Карта сайта | Карта карты сайта</p>
+            </div>
+        </div>
+
+        <div class="disclaimer">
+            <p>⚠ ПРОЧЕЕ ⚠</p>
+            <p>Сайт не является публичной офертой</p>
+            <p>Информация может быть недостоверной</p>
+            <p>Все совпадения случайны а может и нет</p>
+            <p>Мы не несем ответственности</p>
+            <p>Вы несете ответственность</p>
+            <p>Никто не несет ответственности</p>
+        </div>
+
+        <div class="copyright">
+            <p>© ООО Хуеглот — как у всех.</p>
+            <p>© 1998–2026 «MEGA-FUGU-CORPORAITINH»</p>
+            <p>Все права защищены.</p>
+            <p>Некоторые права не защищены.</p>
+            <p style="color: var(--neon-purple); font-weight: bold;">Права защищал охранник Витя.</p>
+            <br>
+            <p style="font-size: 8px; opacity: 0.3;">Данный сайт является шуткой. Никаких покупок совершить нельзя. Все совпадения случайны. Деньги не переводите. Живите дружно.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
