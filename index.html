@@ -1,429 +1,245 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MEGA-FUGU SHOP | КУПИ ИЛИ ПРОИГРАЕШЬ</title>
-    <style>
-        /* УПОРОТЫЙ СТИЛЬ НАЧАЛО */
-        body {
-            background: url('https://media.giphy.com/media/26BRy67C5y7q3H7Hy/giphy.gif') repeat; /* Фон - шум или дичь */
-            background-color: #ffff00;
-            color: #0000ff;
-            font-family: "Comic Sans MS", "Comic Sans", cursive;
-            margin: 0;
-            padding: 0;
-            overflow-x: hidden;
-            text-align: center;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>MEGA-FUGU-CORPORAITINH — СуперСкидки</title>
+  <style>
+    /* Maximal trashy, neon, blinking, loud CSS */
+    :root{--bg:#060906;--neon:#ff00c8;--neon2:#00ffe3}
+    html,body{height:100%;margin:0;font-family:Arial,Impact,serif;background:linear-gradient(135deg,#0a0f1a 0%, #0b0820 50%, #0a0f1a 100%);color:#fff}
+    .wrap{max-width:1100px;margin:20px auto;padding:20px;border-radius:16px;box-shadow:0 10px 60px rgba(0,0,0,.8);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.12));border:3px solid rgba(255,255,255,0.03)}
+    header{display:flex;gap:16px;align-items:center}
+    .logo{font-size:28px;font-weight:900;color:var(--neon);text-shadow:0 0 18px rgba(255,0,200,.4);}
+    .blink{animation:blink 1s infinite}
+    @keyframes blink{50%{opacity:.2}}
+    .flash{padding:6px 12px;border-radius:8px;background:linear-gradient(90deg,var(--neon),var(--neon2));color:#001}
 
-        h1, h2, h3 {
-            text-shadow: 3px 3px 0px #ff00ff;
-            animation: rainbow 2s infinite;
-        }
+    .hero{display:flex;gap:20px;align-items:center;margin-top:18px}
+    .hero .left{flex:1}
+    .hero .right{width:360px}
+    .ctabtn{display:inline-block;padding:14px 22px;border-radius:14px;font-weight:800;text-decoration:none;background:linear-gradient(90deg,#ff9a00,#ff005a);box-shadow:0 6px 24px rgba(255,0,100,.25);}
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.9);
-            border: 5px dashed red;
-            padding: 20px;
-        }
+    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.14));padding:12px;border-radius:12px;border:2px dashed rgba(255,255,255,0.03);position:relative;overflow:hidden}
+    .card h3{margin:6px 0 4px;font-size:18px}
+    .price{font-size:20px;font-weight:900;color:#ffde00}
+    .img{height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .img img{max-width:100%;object-fit:cover;border-radius:8px;transform:rotate(-2deg);box-shadow:0 12px 40px rgba(0,0,0,.6)}
+    .controls{display:flex;gap:8px;align-items:center;margin-top:8px}
+    .qty{display:inline-flex;align-items:center;background:rgba(255,255,255,0.03);padding:6px;border-radius:8px}
+    .qty button{background:transparent;border:1px solid rgba(255,255,255,0.06);color:#fff;padding:6px 10px;border-radius:6px;cursor:pointer}
+    .qty span{min-width:36px;text-align:center;font-weight:800}
+    .buy{margin-left:auto}
 
-        /* КАРТОЧКИ ТОВАРОВ */
-        .product {
-            border: 10px solid lime;
-            background: linear-gradient(180deg, #fff, #ddd);
-            margin: 50px 0;
-            padding: 20px;
-            box-shadow: 10px 10px 0px #000;
-            transform: rotate(-1deg);
-        }
-        
-        .product:nth-child(even) {
-            transform: rotate(1deg);
-            border-color: magenta;
-        }
+    .toasts{position:fixed;right:20px;top:20px;z-index:9999}
+    .toast{background:linear-gradient(90deg,#0ff 20%,#f0f);padding:10px 14px;border-radius:8px;color:#001;margin-bottom:10px;box-shadow:0 6px 30px rgba(0,0,0,.4);font-weight:800}
 
-        .product img {
-            max-width: 100%;
-            height: auto;
-            border: 3px solid red;
-        }
+    footer{margin-top:28px;padding:12px;border-top:2px dashed rgba(255,255,255,0.04);font-size:13px;color:#ddd}
 
-        .specs {
-            background: black;
-            color: lime;
-            font-family: monospace;
-            padding: 10px;
-            font-size: 1.2em;
-            text-align: left;
-        }
+    /* flashing background shapes */
+    .spark{position:fixed;left:-200px;top:-200px;width:600px;height:600px;z-index:0;filter:blur(60px);opacity:.06;background:conic-gradient(from 120deg,#ff00c8,#00ffe3,#ffd700);transform:rotate(7deg)}
 
-        .price {
-            font-size: 4em;
-            color: red;
-            font-weight: bold;
-            text-decoration: underline;
-            animation: pulse 0.5s infinite;
-        }
+    .marquee{display:flex;gap:12px;overflow:hidden;white-space:nowrap;padding:10px;margin-top:8px;border-radius:8px;background:rgba(0,0,0,0.3)}
+    .marquee span{display:inline-block;padding:0 24px;font-weight:900;animation:mar 18s linear infinite}
+    @keyframes mar{0%{transform:translateX(100%)}100%{transform:translateX(-200%)}}
 
-        /* КНОПКИ */
-        .controls {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin: 20px 0;
-        }
+    /* extra chaotic */
+    .confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:2}
 
-        button.qty-btn {
-            background: orange;
-            border: 3px solid black;
-            font-size: 2em;
-            cursor: pointer;
-            width: 50px;
-        }
+    .bigribbon{position:relative;padding:12px;background:linear-gradient(90deg,#ff005a,#ffde00);color:#001;border-radius:10px;font-weight:900;display:inline-block}
 
-        .qty-display {
-            font-size: 2em;
-            font-weight: bold;
-            background: white;
-            padding: 0 20px;
-            border: 2px solid blue;
-        }
-
-        .buy-btn {
-            display: block;
-            width: 100%;
-            background: red;
-            color: yellow;
-            font-size: 3em;
-            font-weight: 900;
-            text-decoration: none;
-            padding: 20px;
-            border: 5px outset #ff0000;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
-        .buy-btn:hover {
-            background: yellow;
-            color: red;
-            border: 5px inset #ff0000;
-        }
-
-        /* УВЕДОМЛЕНИЯ */
-        #notification-area {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 9999;
-        }
-
-        .fake-notification {
-            background: #00ff00;
-            color: black;
-            border: 3px solid blue;
-            padding: 15px;
-            margin-top: 10px;
-            font-weight: bold;
-            box-shadow: 5px 5px 0 rgba(0,0,0,0.5);
-            animation: slideIn 0.5s ease-out;
-            max-width: 300px;
-            text-align: left;
-        }
-
-        /* ФУТЕР (ПОДВАЛ) */
-        footer {
-            background: #111;
-            color: #0f0;
-            text-align: left;
-            padding: 40px;
-            font-family: monospace;
-            font-size: 0.9em;
-            border-top: 10px solid red;
-        }
-        
-        .footer-block {
-            margin-bottom: 20px;
-            border-bottom: 1px dashed #555;
-            padding-bottom: 10px;
-        }
-
-        .rofl-disclaimer {
-            text-align: center;
-            font-size: 0.7em;
-            color: #555;
-            margin-top: 50px;
-        }
-
-        /* АНИМАЦИИ */
-        @keyframes rainbow {
-            0% {color: red;} 20% {color: orange;} 40% {color: yellow;} 60% {color: green;} 80% {color: blue;} 100% {color: violet;}
-        }
-        @keyframes pulse {
-            0% {transform: scale(1);} 50% {transform: scale(1.1);} 100% {transform: scale(1);}
-        }
-        @keyframes slideIn {
-            from {transform: translateX(100%);} to {transform: translateX(0);}
-        }
-    </style>
+    .disclaimer{background:rgba(255,255,255,0.03);padding:12px;border-radius:8px;margin-top:16px;color:#fff}
+  </style>
 </head>
 <body>
+  <div class="spark"></div>
+  <div class="confetti" id="confetti"></div>
+  <div class="wrap">
+    <header>
+      <div class="logo">MEGA-FUGU-CORP <span class="blink">💥</span></div>
+      <div style="margin-left:auto" class="bigribbon">ТОЛЬКО СЕГОДНЯ: Redmi 9A FLAGSHIP — 99₽!!!0!</div>
+    </header>
 
-    <marquee bgcolor="red" scrollamount="15" style="font-size: 2em; color: white; font-weight: bold;">
-        РАСПРОДАЖА СКЛАДА КОНФИСКАТА!!! СКИДКИ 99.9%!!! УСПЕЙ ИЛИ ТЫ ЛОХ!!! БЕСПЛАТНАЯ ДОСТАВКА В АД!!!
-    </marquee>
+    <div class="marquee"><span>🔥🔥🔥 РОЗЫГРЫШ! ЛИМИТ 1 ШТУКА! 🔥🔥🔥</span></div>
 
-    <div class="container">
-        <h1>🤑 MEGA-FUGU MARKET 🤑</h1>
-        <h2>ТОЛЬКО ЭЛИТНАЯ ТЕХНИКА</h2>
-        <hr style="border: 2px solid blue;">
-
-        <div class="product" id="prod1">
-            <h2 style="background: red; color: white;">🔥 XIAOMI REDMI 9A PRO MAX ULTRA 🔥</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/8/8e/Xiaomi_Redmi_9A.jpg" alt="Мощный зверь">
-            
-            <div class="specs">
-                <p>🚀 ПРОЦЕССОР: Intel Core i7 14900KS (Разогнан)</p>
-                <p>🎮 ВИДЕОКАРТА: NVIDIA GeForce RTX 5090 (Встроена в корпус)</p>
-                <p>💾 ПАМЯТЬ: 128 TB SSD / 64 GB RAM</p>
-                <p>🔋 БАТАРЕЯ: Ядерный реактор (хватает на 100 лет)</p>
-                <p>📷 КАМЕРА: Снимает грехи</p>
-            </div>
-            
-            <p>ЦЕНА:</p>
-            <div class="price">99₽!!!0!</div>
-
-            <div class="controls">
-                <button class="qty-btn" onclick="updateQty('q1', -1)">-</button>
-                <span id="q1" class="qty-display">1</span>
-                <button class="qty-btn" onclick="updateQty('q1', 1)">+</button>
-            </div>
-
-            <a href="https://t.me/Logovo_bomja_fugu" class="buy-btn">КУПИТЬ</a>
+    <div class="hero">
+      <div class="left">
+        <h1 style="font-size:34px;margin:6px 0">Redmi 9A FLAGSHIP — RTX 5090, Intel Core i7 Turbo Max</h1>
+        <p style="opacity:.9">Флагманские характеристики по цене хлеба. Бери пока не поздно.</p>
+        <a href="#catalog" class="ctabtn">Смотреть товары</a>
+      </div>
+      <div class="right">
+        <div style="background:rgba(0,0,0,0.2);padding:12px;border-radius:12px;text-align:center">
+          <div style="font-weight:900">Сегодня купили:</div>
+          <div id="livebuy" style="margin-top:8px;font-weight:900;color:#ffde00">Владимир Н. КУПИЛ "Redmi 9A FLAGSHIP" ЗА СМЕШНУЮ ЦЕНУ 99₽!!!0!</div>
         </div>
-
-        <div class="product" id="prod2">
-            <h2>🟠 CMF PHONE 1 (REFAB) 🟠</h2>
-            <img src="https://i.ytimg.com/vi/o4o1OaXG6gM/maxresdefault.jpg" alt="CMF PHONE">
-            
-            <div class="specs" style="background: orange; color: black;">
-                <p>СОСТОЯНИЕ: REFAB (КАК НОВЫЙ МАМОЙ КЛЯНУСЬ)</p>
-                <p>ОПИСАНИЕ: рефаб крутой телефон ваще зачет улет йоу эщкерембус чивапсис</p>
-                <p>КОМПЛЕКТ: Телефон и пакет</p>
-            </div>
-            
-            <p>ЦЕНА:</p>
-            <div class="price">1488₽</div>
-
-            <div class="controls">
-                <button class="qty-btn" onclick="updateQty('q2', -1)">-</button>
-                <span id="q2" class="qty-display">1</span>
-                <button class="qty-btn" onclick="updateQty('q2', 1)">+</button>
-            </div>
-
-            <a href="https://t.me/Logovo_bomja_fugu" class="buy-btn">КУПИТЬ</a>
-        </div>
-
-        <div class="product" id="prod3">
-            <h2 style="color: pink;">💅 GEYPHONE 22 100% Original 💅</h2>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/IPhone_13_Pro_Max_blue.png/640px-IPhone_13_Pro_Max_blue.png" alt="Гейфон">
-            
-            <div class="specs" style="background: pink; color: purple;">
-                <p>✨ ЭКРАН: 8K 444Hz AMOLED SUPER PUPER</p>
-                <p>✨ КАМЕРА: 500 Мегапикселей (видно атомы)</p>
-                <p>✨ ПРОЦЕССОР: Apple M9 Ultra</p>
-                <p>⚠️ ПРИМЕЧАНИЕ: НЕ КРУЧЕ РЕДМИ!!!</p>
-                <p>💧 ЗАЩИТА: От слез хейтеров</p>
-            </div>
-            
-            <p>ЦЕНА:</p>
-            <div class="price">999 999₽</div>
-
-            <div class="controls">
-                <button class="qty-btn" onclick="updateQty('q3', -1)">-</button>
-                <span id="q3" class="qty-display">1</span>
-                <button class="qty-btn" onclick="updateQty('q3', 1)">+</button>
-            </div>
-
-            <a href="https://t.me/Logovo_bomja_fugu" class="buy-btn">КУПИТЬ</a>
-        </div>
-
+      </div>
     </div>
 
-    <div id="notification-area"></div>
+    <section id="catalog" class="products" aria-label="Каталог товаров">
+      <!-- Product 1 -->
+      <div class="card" data-id="redmi">
+        <div class="img"><img src="https://via.placeholder.com/400x250.png?text=Redmi+9A+FLAGSHIP" alt="Redmi 9A FLAGSHIP"></div>
+        <h3>Redmi 9A FLAGSHIP</h3>
+        <div class="price" data-price="99">99₽</div>
+        <p style="font-size:13px;margin:6px 0 0;opacity:.9">RTX 5090 • Intel Core i7 • 24GB RAM • 2TB NVMe • Лазерный сканер радости</p>
+        <div class="controls">
+          <div class="qty"><button onclick="changeQty('redmi',-1)">-</button><span id="qty-redmi">1</span><button onclick="changeQty('redmi',1)">+</button></div>
+          <div class="buy"><button class="ctabtn" onclick="onBuy('redmi')">КУПИТЬ</button></div>
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="card" data-id="cmf">
+        <div class="img"><img src="https://via.placeholder.com/400x250.png?text=CMF+PHONE+1+%28REFAB%29" alt="CMF PHONE 1 REFAB"></div>
+        <h3>CMF PHONE 1 <small style="font-weight:700;color:#ffd;">(REFAB)</small></h3>
+        <div class="price" data-price="199">199₽</div>
+        <p style="font-size:13px;margin:6px 0 0;opacity:.95">рефаб крутой телефон ваще зачет улет йоу эщкерембус чивапсис</p>
+        <div class="controls">
+          <div class="qty"><button onclick="changeQty('cmf',-1)">-</button><span id="qty-cmf">1</span><button onclick="changeQty('cmf',1)">+</button></div>
+          <div class="buy"><button class="ctabtn" onclick="onBuy('cmf')">КУПИТЬ</button></div>
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="card" data-id="gey">
+        <div class="img"><img src="https://via.placeholder.com/400x250.png?text=GEYPHONE+22+100%25+Original" alt="GEYPHONE 22"></div>
+        <h3>GEYPHONE 22 — 100% Original</h3>
+        <div class="price" data-price="149">149₽</div>
+        <p style="font-size:13px;margin:6px 0 0;opacity:.9">Невероятные характеристики, но всё равно не круче Redmi 9A FLAGSHIP.</p>
+        <div class="controls">
+          <div class="qty"><button onclick="changeQty('gey',-1)">-</button><span id="qty-gey">1</span><button onclick="changeQty('gey',1)">+</button></div>
+          <div class="buy"><button class="ctabtn" onclick="onBuy('gey')">КУПИТЬ</button></div>
+        </div>
+      </div>
+    </section>
+
+    <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+      <div style="font-weight:900">Итого:</div>
+      <div id="total" style="font-size:20px;font-weight:900;color:#ffde00">447₽</div>
+      <div style="margin-left:auto"><button class="ctabtn" onclick="onCheckout()">К УПЛАТЕ</button></div>
+    </div>
+
+    <div class="disclaimer">
+      <strong>Дисклеймер:</strong> Это рофл сайт. Ни одна из характеристик не является реальной. Все совпадения случайны (или нет).
+    </div>
 
     <footer>
-        <div class="footer-block">
-            <h3>Контактная информация:</h3>
-            Телефон (Украина): +380 (99) 451-88-51<br>
-            Телефон (Россия): +7 (999) 444-44-67<br>
-            Телефон (Беларусь): +375 (29) 042-42-42<br>
-            Телефон (доп.): +380 (93) 045-55-66<br>
-            Телефон (Viber / WhatsApp / Telegram): +7 (955) 070-42-24
-        </div>
+      <h4>Контактная информация:</h4>
+      <p>Телефон (Украина): +380 (99) 451-88-51<br>
+      Телефон (Россия): +7 (999) 444-44-67<br>
+      Телефон (Беларусь): +375 (29) 042-42-42<br>
+      Телефон (доп.): +380 (93) 045-55-66<br>
+      Телефон (Viber / WhatsApp / Telegram): +7 (955) 070-42-24</p>
 
-        <div class="footer-block">
-            <h3>Email:</h3>
-            support@site.com<br>
-            admin@site.com<br>
-            noreply@site.com<br>
-            ceo@site.com<br>
-            mrfygypc10@gmail.com
-        </div>
+      <h4>Email:</h4>
+      <p>support@site.com<br>admin@site.com<br>noreply@site.com<br>ceo@site.com<br>mrfygypc10@gmail.com</p>
 
-        <div class="footer-block">
-            <h3>Мессенджеры:</h3>
-            Telegram: @Logovo_bomja_fugu<br>
-            VK: vk.com/VKXYETA<br>
-            Discord: discord.gg/abcdef<br>
-            ICQ: 123456789<br>
-            Skype: live:company_support
-        </div>
+      <h4>Мессенджеры:</h4>
+      <p>Telegram: @Logovo_bomja_fugu<br>VK: vk.com/VKXYETA<br>Discord: discord.gg/abcdef<br>ICQ: 123456789<br>Skype: live:company_support</p>
 
-        <div class="footer-block">
-            <h3>Адреса офисов:</h3>
-            Украина, г. Крыжопиль, ул. Независимости, д. 1<br>
-            Россия, г. Приж, ул. Ленина, д. 1, офис 404<br>
-            Беларусь, г. Минск, пр-т Победителей, д. 1337<br>
-            Казахстан, г. Караганда, ул. Бизнесовая, д. НЕТУ<br>
-            Где сервер: Украина г.Днепр ул. Наeбалова д. 3 Глав.Офис 1 Сервер №1
-        </div>
+      <h4>Адреса офисов:</h4>
+      <p>Украина, г. Крыжопиль, ул. Независимости, д. 1<br>
+      Россия, г. Приж, ул. Ленина, д. 1, офис 404<br>
+      Беларусь, г. Минск, пр-т Победителей, д. 1337<br>
+      Казахстан, г. Караганда, ул. Бизнесовая, д. НЕТУ<br>
+      Где сервер: Украина г.Днепр ул. Наeбалова д. 3 Глав.Офис 1 Сервер №1</p>
 
-        <div class="footer-block">
-            <h3>Юридическая информация:</h3>
-            ФОП Фугу Перкусрак Кунглефишь<br>
-            ИНН: А хуй его знает<br>
-            ОГРНИП: 667788990010023<br><br>
+      <h4>Юридическая информация:</h4>
+      <p>ФОП Фугу Перкусрак Кунглефишь<br>ИНН: А хуй его знает<br>ОГРНИП: 667788990010023</p>
+      <p>ФОП Gemini и Чат ГПТ<br>ИНН: 09876566666666<br>ОГРНИП: 667788990010716</p>
+      <p>ФОП Александр Григорьевич Лукашенко<br>ИНН: 0987654021<br>ОГРНИП: 667788990010023</p>
+      <p>ИП хз<br>ИНН: 1122334455<br>ОГРНИП: 667788990011223</p>
+      <p>ИП Сунь Хуй Чай<br>ИНН: 11251983455<br>ОГРНИП: 667788990010023</p>
+      <p>ИП: (ВЫГОРАНИЕ +рест) Enfiler #saintkisser стикер<br>ИНН 1456816<br>ОГРНИП: 667788990010023</p>
+      <p>ООО «Большие Члены Ой Блять Челны»<br>ИНН: 1231531231<br>КПП: 321321321<br>ОГРН: 1027700132195</p>
+      <p>ООО «тмыв денег»<br>ИНН: 196396492583<br>ОГРН: 0000005500000</p>
+      <p>ЧП Осуждаю</p>
+      <p>Самозанятый:<br>Налог на профессиональный доход<br>Регистрация: где-то там</p>
 
-            ФОП Gemini<br>
-            ИНН: 09876566666666<br>
-            ОГРНИП: 667788990010716<br><br>
+      <h4>Банковские реквизиты:</h4>
+      <p>Расчетный счёт: 40802810900000000001<br>
+      Банк: ФПИ<br>БИК: 044525225<br>Корр. счёт: 30101810400000000225</p>
 
-            ФОП Александр Григорьевич Лукашенко<br>
-            ИНН: 0987654021<br>
-            ОГРНИП: 667788990010023<br><br>
+      <h4>Документы:</h4>
+      <p>Политика конфиденциальности | Пользовательское соглашение | Согласие на обработку персональных данных | Отказ от ответственности | Согласие на cookies | Отказ от cookies | Согласие на отказ от cookies | Согласие на согласие</p>
 
-            ИП хз<br>
-            ИНН: 1122334455<br>
-            ОГРНИП: 667788990011223<br><br>
+      <h4>Навигация:</h4>
+      <p>Главная | О нас | Услуги | Цены | Отзывы | FAQ | Контакты | Вакансии | Партнёрам | Инвесторам | Карта сайта | Карта карты сайта</p>
 
-            ИП Сунь Хуй Чай<br>
-            ИНН: 11251983455<br>
-            ОГРНИП: 667788990010023<br><br>
+      <p>Прочее: Сайт не является публичной офертой. Информация может быть недостоверной. Все совпадения случайны а может и нет. Мы не несем ответственности. Вы несете ответственность. Никто не несет ответственности.</p>
 
-            ИП: (ВЫГОРАНИЕ +рест) Enfiler #saintkisser стикер<br>
-            ИНН 1456816<br>
-            ОГРНИП: 667788990010023<br><br>
-
-            ООО «Большие Члены Ой Блять Челны»<br>
-            ИНН: 1231531231<br>
-            КПП: 321321321<br>
-            ОГРН: 1027700132195<br><br>
-
-            ООО «тмыв денег»<br>
-            ИНН: 196396492583<br>
-            ОГРН: 0000005500000<br><br>
-
-            ЧП «Негры»<br>
-            СПД: 552973555<br><br>
-
-            Самозанятый:<br>
-            Налог на профессиональный доход<br>
-            Регистрация: где-то там
-        </div>
-
-        <div class="footer-block">
-            <h3>Банковские реквизиты:</h3>
-            Расчетный счёт: 40802810900000000001<br>
-            Банк: ФПИ<br>
-            БИК: 044525225<br>
-            Корр. счёт: 30101810400000000225
-        </div>
-
-        <div class="footer-block">
-            <h3>Документы:</h3>
-            Политика конфиденциальности<br>
-            Пользовательское соглашение<br>
-            Согласие на обработку персональных данных<br>
-            Отказ от ответственности<br>
-            Согласие на cookies<br>
-            Отказ от cookies<br>
-            Согласие на отказ от cookies<br>
-            Согласие на согласие
-        </div>
-
-        <div class="footer-block">
-            <h3>Навигация:</h3>
-            Главная | О нас | Услуги | Цены | Отзывы | FAQ | Контакты | Вакансии | Партнёрам | Инвесторам | Карта сайта | Карта карты сайта
-        </div>
-
-        <div class="footer-block">
-            <h3>Прочее:</h3>
-            Сайт не является публичной офертой<br>
-            Информация может быть недостоверной<br>
-            Все совпадения случайны а может и нет<br>
-            Мы не несем ответственности<br>
-            Вы несете ответственность<br>
-            Никто не несет ответственности
-        </div>
-
-        <div class="footer-block" style="text-align: center; border: none;">
-            <p>© 1998–2026 «MEGA-FUGU-CORPORAITINH»</p>
-            <p>Все права защищены.</p>
-            <p>Некоторые права не защищены.</p>
-            <p>Права защищал охранник витя.</p>
-        </div>
-
-        <div class="rofl-disclaimer">
-            ВНИМАНИЕ: ЭТО РОФЛ САЙТ, НЕ ВВОДИТЕ ДАННЫЕ КАРТЫ, ХОТЯ ВВОДИТЬ ТУТ НЕКУДА ЛОЛ
-        </div>
+      <p>© 1998–2026 «MEGA-FUGU-CORPORAITINH"<br>Все права защищены. Некоторые права не защищены. Права защищал охранник витя.</p>
     </footer>
+  </div>
 
-    <script>
-        // Функция изменения количества
-        function updateQty(id, change) {
-            let el = document.getElementById(id);
-            let val = parseInt(el.innerText);
-            val += change;
-            if (val < 1) val = 1;
-            if (val > 999) val = 999;
-            el.innerText = val;
-        }
+  <div class="toasts" id="toasts"></div>
 
-        // Генератор фейковых покупок
-        const names = ["Владимир Н.", "Олег Б.", "Ашот 777", "Мамкин Хакер", "Илон Маск", "Твой Батя", "Бомж Валера", "Зеленский", "Пупа и Лупа"];
-        const products = ["Redmi 9A", "GEYPHONE 22", "CMF PHONE (REFAB)", "ЧЕХОЛ С УШАМИ", "ЗАРЯДКУ ОТ ТЕСЛЫ"];
-        const prices = ["99₽!!!0!", "100500$", "за банку пива", "бесплатно (украл)", "за душу"];
+  <script>
+    // Products state
+    const products = {
+      redmi: {price:99, qty:1, name:'Redmi 9A FLAGSHIP'},
+      cmf:  {price:199, qty:1, name:'CMF PHONE 1 (REFAB)'},
+      gey:  {price:149, qty:1, name:'GEYPHONE 22'}
+    };
 
-        function showFakeNotification() {
-            const area = document.getElementById('notification-area');
-            const randomName = names[Math.floor(Math.random() * names.length)];
-            const randomProd = products[Math.floor(Math.random() * products.length)];
-            const randomPrice = prices[Math.floor(Math.random() * prices.length)];
+    function changeQty(id,delta){
+      const p = products[id];
+      p.qty = Math.max(0,p.qty + delta);
+      document.getElementById('qty-'+id).innerText = p.qty;
+      recalc();
+    }
 
-            // Создаем уведомление
-            const div = document.createElement('div');
-            div.className = 'fake-notification';
-            div.innerHTML = `🔔 <b>${randomName}</b> КУПИЛ <br><i>"${randomProd}"</i><br> ЗА СМЕШНУЮ ЦЕНУ: <span style="color:red">${randomPrice}</span>`;
+    function recalc(){
+      let total=0;for(const k in products) total += products[k].price * products[k].qty;
+      document.getElementById('total').innerText = total + '₽';
+    }
 
-            area.appendChild(div);
+    function onBuy(id){
+      // open telegram link
+      const tg = 'https://t.me/Logovo_bomja_fugu';
+      // show short animation
+      showToast(`${randomName()} КУПИЛ "${products[id].name}" ЗА ${products[id].price}₽!!!`);
+      window.open(tg, '_blank');
+    }
 
-            // Удаляем через 4 секунды
-            setTimeout(() => {
-                div.remove();
-            }, 4000);
-        }
+    function onCheckout(){
+      const tg = 'https://t.me/Logovo_bomja_fugu';
+      showToast('Переадресация в Telegram — оформляем заказ...');
+      window.open(tg, '_blank');
+    }
 
-        // Запускаем уведомления каждые 3-6 секунд
-        setInterval(() => {
-            showFakeNotification();
-        }, Math.random() * 3000 + 3000);
+    // Fake live buy notifications
+    const names = ['Владимир Н.','Саша К.','Мария П.','Олег Б.','Наташа С.','Иван И.','Петро Т.','Андрей Z.','Катя В.'];
+    function randomName(){return names[Math.floor(Math.random()*names.length)];}
 
-    </script>
+    function showToast(text){
+      const t = document.createElement('div'); t.className='toast'; t.innerText = text; document.getElementById('toasts').appendChild(t);
+      setTimeout(()=>{t.style.opacity=0;setTimeout(()=>t.remove(),700)},4000);
+    }
+
+    // periodically update livebuy and spawn toasts
+    setInterval(()=>{
+      const id = Object.keys(products)[Math.floor(Math.random()*3)];
+      const p = products[id];
+      const name = randomName();
+      document.getElementById('livebuy').innerText = `${name} КУПИЛ "${p.name}" ЗА ${p.price}₽!!!0!`;
+      showToast(`${name} КУПИЛ "${p.name}" ЗА СМЕШНУЮ ЦЕНУ ${p.price}₽!!!0!`);
+    },5000+Math.random()*4000);
+
+    // confetti-ish particles
+    (function(){
+      const c = document.getElementById('confetti');
+      for(let i=0;i<60;i++){
+        const el = document.createElement('div');
+        el.style.position='absolute'; el.style.left=Math.random()*100+'%'; el.style.top=Math.random()*100+'%'; el.style.width='8px'; el.style.height='8px'; el.style.background=['#ff0','#0ff','#f0f','#0f0'][Math.floor(Math.random()*4)]; el.style.opacity=Math.random(); el.style.transform='rotate('+Math.random()*360+'deg)'; c.appendChild(el);
+      }
+    })();
+
+    // init
+    recalc();
+
+  </script>
 </body>
-    </html>
-    
+</html>
